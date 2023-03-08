@@ -43,7 +43,7 @@ name = "clvm_tools_rs"
 crate-type = ["cdylib", "rlib"]
 
 [features]
-extension-module = ["pyo3"]
+extension-module = [ ]
 default = ["extension-module"]
 
 [target.'cfg(target_family="wasm")'.dependencies]
@@ -51,14 +51,8 @@ wasm-bindgen = { version = "0.2.80", features = ["serde-serialize"] }
 wasm-bindgen-test = "0.3.25"
 js-sys = "0.3.58"
 getrandom = { version = "0.2", features = ["js"] }
-
-[target.'cfg(not(target_family="wasm"))'.dependencies]
-pyo3 = { version = "0.14.2", features = ["abi3-py37", "extension-module"], optional = true }
-getrandom = { version = "0.2" }
-
-[build-dependencies]
-pyo3-build-config = "0.15.1"
-
+ 
+  
 [[bin]]
 name = "opd"
 path = "src/classic/bins/opd.rs"
