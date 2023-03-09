@@ -5,14 +5,6 @@ use std::env;
 use std::rc::Rc;
 
 use clvm_tools_rs::compiler::compiler::DefaultCompilerOpts;
-//use std::collections::HashMap;
-use std::env;
-use std::rc::Rc;
-
-//use clvm_rs::allocator::Allocator;
-
-use clvm_tools_rs::compiler::compiler::DefaultCompilerOpts;
-//use clvm_tools_rs::compiler::evaluate::{Evaluator, EVAL_STACK_LIMIT};
 use clvm_tools_rs::compiler::frontend::frontend;
 use clvm_tools_rs::compiler::sexp::parse_sexp;
 use clvm_tools_rs::compiler::srcloc::Srcloc;
