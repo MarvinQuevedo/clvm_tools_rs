@@ -33,6 +33,7 @@ pub const MAX_SEXP_COST: usize = 15;
 /// required for chialisp but are useful for ergonomics and compilation.  The
 /// Srcloc especially is relied on by the vscode plugin, which uses the frontend
 /// entrypoints here for parsing and to surface some kinds of errors.
+// Compiler view of SExp
 #[derive(Clone, Debug, Serialize)]
 pub enum SExp {
     /// A native nil value "()"

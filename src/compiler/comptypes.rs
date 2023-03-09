@@ -267,6 +267,7 @@ pub enum IncludeProcessType {
 /// A description of an include form.  Here, records the locations of the various
 /// parts of the include so they can be marked in the language server and be
 /// subject to other kind of reporting if desired.
+// A description of an include form.
 #[derive(Clone, Debug, Serialize)]
 pub struct IncludeDesc {
     /// Location of the keyword introducing this form.

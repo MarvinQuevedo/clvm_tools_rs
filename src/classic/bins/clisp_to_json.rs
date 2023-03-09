@@ -5,6 +5,14 @@ use std::env;
 use std::rc::Rc;
 
 use clvm_tools_rs::compiler::compiler::DefaultCompilerOpts;
+//use std::collections::HashMap;
+use std::env;
+use std::rc::Rc;
+
+//use clvm_rs::allocator::Allocator;
+
+use clvm_tools_rs::compiler::compiler::DefaultCompilerOpts;
+//use clvm_tools_rs::compiler::evaluate::{Evaluator, EVAL_STACK_LIMIT};
 use clvm_tools_rs::compiler::frontend::frontend;
 use clvm_tools_rs::compiler::sexp::parse_sexp;
 use clvm_tools_rs::compiler::srcloc::Srcloc;
@@ -25,13 +33,13 @@ fn main() {
         .and_then(|parsed_program| frontend(opts.clone(), &parsed_program));
     match result {
         Ok(program) => match serde_json::to_string(&program) {
-            Ok(output) => println!("{output}"),
+            Ok(output) => println!("{}", output),
             Err(e) => {
-                println!("{e:?}");
+                println!("{:?}", e);
             }
         },
         Err(e) => {
-            println!("{e:?}");
+            println!("{:?}", e);
         }
     }
 }
